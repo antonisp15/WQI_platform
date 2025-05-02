@@ -72,64 +72,55 @@
         <td>Saturday 03-05</td><td>12:00</td>
         <td class="moderate">18</td><td class="moderate">16</td>
         <td class="ideal">66</td><td class="ideal">69</td>
-        <td class="moderate">7.2m/s NW</td>
-        <td class="uncomfortable">45</td>
+        <td class="uncomfortable">7.2m/s NW</td>
     </tr>
     <tr>
         <td>Saturday 03-05</td><td>15:00</td>
         <td class="moderate">17</td><td class="moderate">15</td>
         <td class="ideal">66</td><td class="ideal">70</td>
         <td class="moderate">6.9m/s NW</td>
-        <td class="moderate">51</td>
     </tr>
     <tr>
         <td>Saturday 03-05</td><td>18:00</td>
         <td class="moderate">17</td><td class="moderate">15</td>
         <td class="ideal">68</td><td class="ideal">69</td>
         <td class="moderate">7.7m/s NW</td>
-        <td class="moderate">58</td>
     </tr>
     <tr>
         <td>Saturday 03-05</td><td>21:00</td>
         <td class="ideal">20</td><td class="ideal">18</td>
         <td class="ideal">69</td><td class="moderate">73</td>
         <td class="moderate">6.5m/s NW</td>
-        <td class="moderate">64</td>
     </tr>
     <tr>
         <td>Sunday 04-05</td><td>00:00</td>
         <td class="ideal">20</td><td class="ideal">18</td>
         <td class="moderate">70</td><td class="moderate">72</td>
         <td class="moderate">6.6m/s NW</td>
-        <td class="moderate">70</td>
     </tr>
     <tr>
         <td>Sunday 04-05</td><td>03:00</td>
         <td class="moderate">18</td><td class="moderate">17</td>
         <td class="ideal">65</td><td class="ideal">66</td>
         <td class="moderate">7.5m/s NW</td>
-        <td class="moderate">76</td>
     </tr>
     <tr>
         <td>Sunday 04-05</td><td>06:00</td>
         <td class="ideal">20</td><td class="ideal">18</td>
         <td class="ideal">67</td><td class="ideal">68</td>
         <td class="moderate">7.0m/s NW</td>
-        <td class="ideal">82</td>
     </tr>
     <tr>
         <td>Sunday 04-05</td><td>09:00</td>
         <td class="ideal">20</td><td class="ideal">20</td>
         <td class="ideal">67</td><td class="ideal">71</td>
         <td class="moderate">7.7m/s NW</td>
-        <td class="ideal">89</td>
     </tr>
     <tr>
         <td>Sunday 04-05</td><td>12:00</td>
         <td class="ideal">20</td><td class="ideal">20</td>
         <td class="ideal">66</td><td class="ideal">69</td>
         <td class="moderate">6.6m/s NW</td>
-        <td class="ideal">95</td>
     </tr>
 </table>
 
@@ -176,6 +167,10 @@
     const conductance = getRandom(48000, 55000);
     const odo = getRandom(7.5, 9.2);
     const phCell = row.insertCell(row.cells.length);
+    const odoCell = row.insertCell(row.cells.length);
+    odoCell.textContent = odo;
+    odoCell.classList.add(getColorClass(odo, 'odo')); 
+      
     phCell.textContent = ph;
     phCell.classList.add(getColorClass(ph, 'ph'));
 
