@@ -140,19 +140,19 @@
 
   // Function to get color class based on values
   function getColorClass(value, type) {
-    if (type === 'odo') {
+    if (type === 'ph') {
       if (value < 7.5) return 'uncomfortable';
       if (value < 8.5) return 'moderate';
       return 'ideal';
     }
-    if (type === 'ph') {
+    if (type === 'turbidity') {
       if (value < 7.8) return 'uncomfortable';
       if (value < 8.1) return 'moderate';
       return 'ideal';
     }
-    if (type === 'turbidity') {
-      if (value < 0.7) return 'ideal';
-      if (value < 1.2) return 'moderate';
+    if (type === 'wqi') {
+      if (value > 70) return 'ideal';
+      if (value > 50) return 'moderate';
       return 'uncomfortable';
     }
     if (type === 'conductance') {
@@ -165,14 +165,10 @@
   const rows = document.querySelectorAll("table tr");
   for (let i = 1; i < rows.length; i++) { // Skip header row
     const row = rows[i];
-    const odo = getRandom(7, 10);
+    const wqi = getRandom(40, 95);
     const ph = getRandom(8, 8.3);
     const turbidity = getRandom(0.5, 1.5);
     const conductance = getRandom(48000, 55000);
-
-    const odoCell = row.insertCell(row.cells.length);
-    odoCell.textContent = odo;
-    odoCell.classList.add(getColorClass(odo, 'odo'));
 
     const phCell = row.insertCell(row.cells.length);
     phCell.textContent = ph;
@@ -185,6 +181,10 @@
     const conductanceCell = row.insertCell(row.cells.length);
     conductanceCell.textContent = conductance;
     conductanceCell.classList.add(getColorClass(conductance, 'conductance'));
+
+    const odoCell = row.insertCell(row.cells.length);
+    odoCell.textContent = wqi;
+    odoCell.classList.add(getColorClass(wqi, 'wqi')); 
   }
 </script>
 
