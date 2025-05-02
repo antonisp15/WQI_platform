@@ -168,6 +168,7 @@
     const odo = getRandom(7.5, 9.2);
     const phCell = row.insertCell(row.cells.length);
     const odoCell = row.insertCell(row.cells.length);
+ 
     odoCell.textContent = odo;
     odoCell.classList.add(getColorClass(odo, 'odo')); 
       
@@ -182,9 +183,9 @@
     conductanceCell.textContent = conductance;
     conductanceCell.classList.add(getColorClass(conductance, 'conductance'));
 
-    const odoCell = row.insertCell(row.cells.length);
-    odoCell.textContent = wqi;
-    odoCell.classList.add(getColorClass(wqi, 'wqi')); 
+    const wqiCell = row.insertCell(row.cells.length);
+    wqiCell.textContent = wqi;
+    wqiCell.classList.add(getColorClass(wqi, 'wqi')); 
   }
 </script>
 
